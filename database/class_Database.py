@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from database.models import metadata, User
 from source.input_data import input_data
-from sqlalchemy.orm import sessionmaker #  <--- подсказала нейронка
+from sqlalchemy.orm import sessionmaker
 
 class Database:
     def __init__(self, file_name='access.db'):
@@ -11,7 +11,7 @@ class Database:
         
     def add_user(self, user_data):
         session = self.Session()
-        user = User.users.insert().values(**user_data)  #   <--- подсказала нейронка
+        user = User.users.insert().values(**user_data)
         session.execute(user)
         session.commit()
         session.close()
@@ -22,11 +22,3 @@ class Database:
         self.add_user(user_data)
         print("Пользователь добавлен")
         
-        # user = User.users.insert().values(
-        #     name=input_data().name,
-        #     login=input_data().login,
-        #     password=input_data().password,
-        #     email=input_data().email,
-        # )
-        # self.add_user(user)
-        # print("Пользователь добавлен")
