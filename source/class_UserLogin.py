@@ -18,15 +18,6 @@ class UserLogin:
             return True
         return False
     
-    # def check_email(self, email):
-    #     try:
-    #         valid_email = validate_email(email)
-    #         return valid_email['email']
-    #     except EmailNotValidError:
-    #         return False
-    
     def check_email(self, email):
         valid_email = validate_email(email)
         return valid_email['email']
-    
-    
